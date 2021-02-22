@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Employer's Earnings</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Employee ID</th>
+        <th scope="col">Earning Date</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @earnings.each_with_index do |earning, index| %>
+      <tr>
+        <th><%= index + 1 %></th>
+        <td><%= earning.employee_id %></td>
+        <td><%= earning.earning_date %></td>
+        <td><%= earning.amount %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

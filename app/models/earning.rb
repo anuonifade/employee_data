@@ -10,11 +10,9 @@ class Earning < ApplicationRecord
 
       row.each do |k, v|
         key = map[k]
-
-        v = Earning.new.change_date_format(v, key[1]) if key[0].to_sym == :earning_date
-        v = Earning.new.currency_value(v, key[1]) if key[0].to_sym == :amount
-
         if key.is_a? Array
+          v = Earning.new.change_date_format(v, key[1]) if key[0].to_sym == :earning_date
+          v = Earning.new.currency_value(v, key[1]) if key[0].to_sym == :amount
           data[key[0].to_sym] = v
         else
           data[key.to_sym] = v

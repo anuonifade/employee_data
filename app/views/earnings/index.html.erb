@@ -15,4 +15,7 @@
       <% end %>
     </div>
   </div>
+  <% if @employer.earnings.count > 0 %>
+    <h5><a href='<%= "show/#{@employer.id}" %>'>View Earnings</a></h5>
+  <% end %>
 </div>
